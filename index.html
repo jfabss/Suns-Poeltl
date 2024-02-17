@@ -3,60 +3,66 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description"
-        content="This is a recreation of the hit game Poeltl, an NBA spin on the Wordle puzzles; however, this game only includes players who play for / have played for the Phoenix Suns.">
-    <meta name="keywords" content="">
-    <meta name="author" content="Jackson Fabiano (jfabss)">
-    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Poeltl (Sun's Only Edition)</title>
+
+    <meta name="description"
+        content="This is a recreation of the NBA guessing game Poeltl, an NBA spin on the Wordle puzzles; however, this game only includes players who play for / have played for the Phoenix Suns.">
+    <meta name="keywords"
+        content="phoenix suns poeltl, suns poetl, poeltl game, nba wordle, guess the nba player, poetle, poetlt, nba guessing game, nba player guessing game, basketball wordle, nba guess, weddle nba, phoenix suns puzzle, phoenix suns game">
+    <meta name="author" content="Jackson Fabiano (jfabss on github)">
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
 
-    <h1 id="title-id">SUNS POELTL</h1>
+    <!-- header -->
+    <header class="header-class">
+        <h1 class="chakra-petch-bold" id="title-id">SUNS POELTL</h1>
+        <button class="help-button">&#63;</button>
+    </header>
 
+    <!-- line + description text -->
     <hr id="title-line">
-
     <p id="instruction-id">Guess which Suns player is shown below...</p>
 
+    <!-- image section -->
     <div class="player-img-container" id="player-img-container">
         <img class="player-image" id="player-image" src="">
     </div>
 
+    <!-- searching and submitting section -->
     <div class="search-and-submit-container">
         <input type="text" id="nameInput" placeholder="Guess a Sun..." autocomplete="off" spellcheck="false"
             autocapitalize="none" onFocus="window.scrollTo(0, 0);">
     </div>
-
-        <ul id="suggestions"></ul>
-
-
-
+    <ul id="suggestions"></ul>
     <input type="submit" value="SUBMIT" id="submitBtn">
 
-
-
-
+    <!-- guess section -->
     <div class="guess-container" id="guess-container">
         <div class="categories-container">
-            <div class="category" id="college">College</div>
-            <div class="category" id="draft-year">Drafted</div>
-            <div class="category" id="height">Height</div>
-            <div class="category" id="number">Number</div>
-            <div class="category" id="position">Position</div>
+            <div class="category" id="college">Col.</div>
+            <div class="category" id="draft-year">Debut</div>
+            <div class="category" id="height">H.</div>
+            <div class="category" id="number">#</div>
+            <div class="category" id="position">Pos.</div>
         </div>
     </div>
 
+    <!-- reset + bottom line -->
     <input type="submit" value="Reset Player &#8634;" id="resetBtn">
-
     <hr class="bottom-line">
 
+    <!-- footer section -->
     <footer id="footer-id">
         <p>Created by: Jackson Fabiano</p>
     </footer>
 
+    <!-- script link -->
     <script src="script.js"></script>
 </body>
 
