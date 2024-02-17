@@ -10,8 +10,6 @@ html {
     scroll-behavior: smooth;
     background: linear-gradient(to right, #E56020, #feb47b);
     background-color: #E56020;
-    -webkit-overflow-scrolling: touch !important;
-    overflow: auto !important;
     height: 100% !important;
 }
 
@@ -31,7 +29,6 @@ body {
     padding: 0;
     margin: 0;
     overscroll-behavior-y: contain;
-    -webkit-overflow-scrolling: touch !important;
     height: 100% !important;
 }
 
