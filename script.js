@@ -80,6 +80,10 @@ submitBtn.addEventListener('click', function () {
 
                 playerImage.classList.add('unveil')
                 messageText.innerHTML = 'BANGGG!!!!'
+                submitBtn.value = correctGuess.name;
+                submitBtn.disabled = true;
+                submitBtn.style.marginTop = '0';
+                nameInput.style.display = 'none';
 
                 const newGuessDiv = document.createElement('div');
                 newGuessDiv.classList.add('categories-container', 'correct', 'unveil');
