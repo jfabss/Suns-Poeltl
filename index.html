@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description"
+        content="This is a recreation of the hit game Poeltl, an NBA spin on the Wordle puzzles; however, this game only includes players who play for / have played for the Phoenix Suns.">
+    <meta name="keywords" content="">
+    <meta name="author" content="Jackson Fabiano (jfabss)">
+    <link rel="stylesheet" href="styles.css">
+    <title>Poeltl (Sun's Only Edition)</title>
+
+</head>
+
+<body>
+
+    <h1 id="title-id">SUNS POELTL</h1>
+
+    <hr id="title-line">
+
+    <p id="instruction-id">Guess which Suns player is shown below...</p>
+
+    <input type="submit" value="Reset Player &#8634;" id="resetBtn">
+
+    <div class="player-img-container" id="player-img-container">
+        <img class="player-image" id="player-image" src="">
+    </div>
+
+    <div class="search-and-submit-container">
+        <input type="text" id="nameInput" placeholder="Guess a Sun..." autocomplete="off" spellcheck="false"
+            autocapitalize="none" onFocus="window.scrollTo(0, 0);">
+    </div>
+
+        <ul id="suggestions"></ul>
+
+
+
+    <input type="submit" value="SUBMIT" id="submitBtn">
+
+
+
+
+    <div class="guess-container" id="guess-container">
+        <div class="categories-container">
+            <div class="category" id="college">College</div>
+            <div class="category" id="draft-year">Drafted</div>
+            <div class="category" id="height">Height</div>
+            <div class="category" id="number">Number</div>
+            <div class="category" id="position">Position</div>
+        </div>
+    </div>
+
+    <hr class="bottom-line">
+
+    <footer id="footer-id">
+        <p>Created by: Jackson Fabiano</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

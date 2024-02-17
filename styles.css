@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    min-height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+    background: linear-gradient(to right, #E56020, #feb47b);
+    background-color: #E56020;
+    -webkit-overflow-scrolling : touch !important;
+    overflow: auto !important;
+    height: 100% !important;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    line-height: 1.3;
+    font-weight: 300;
+    text-align: center;
+
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling : touch !important;
+    overflow: auto !important;
+    height: 100% !important;
+}
+
+#title-id {
+    font-size: 3rem;
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+    background-color: linear-gradient(to right, #1D1160, #d1c9ff);
+}
+
+#title-line {
+    width: 80vw;
+    border: black;
+    height: 3px;
+    background-color: #000;
+}
+
+#instruction-id {
+    font-weight: bold;
+}
+
+.search-and-submit-container {
+    display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+input[type="text"] {
+    max-width: 60vw;
+    height: 5vh;
+    font-size: 1rem;
+    border: 3px solid black;
+    margin: 0;
+    margin-right: 3px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    width: 60vw;
+}
+
+input[type="submit"] {
+    background-color:  #E56020;
+    height: 5vh;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 5px;
+    border: 3px solid black;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.player-img-container {
+    margin: auto;
+    border: 3px solid black;
+    max-width: 30vh;
+    max-height: 30vh;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.player-image {
+    margin: auto;
+    padding: 0;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    filter: brightness(0);
+}
+
+.categories-container {
+    margin: auto;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid #000; /* Border color */
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #bec0c2;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    color: #000000 ;
+}
+
+.category {
+    flex: 1;
+    border-right: 3px solid #000; /* Border color */
+    padding: 10px; /* Adjust padding as needed */
+    box-sizing: border-box;
+    font-size: 0.65rem; 
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Remove the right border from the last box */
+[id^="position"] {
+    border-right: none;
+}
+
+.guess-div {
+    margin: auto;
+    margin-bottom: 10px;
+    width: 50vw;
+    background-color: white;
+    color: black;
+}
+
+.guess-div hr {
+    background-color: black;
+    height: 1px;
+    width: 30vw;
+    border: none;
+}
+
+.correct {
+    background-color: rgb(151, 255, 151);
+}
+
+.incorrect {
+    background-color: rgb(255, 255, 255);
+}
+
+.close {
+    background-color: rgb(255, 255, 151);
+}
+
+.unveil {
+    filter: none;
+}
+
+
+#resetBtn {
+    margin-bottom: 15px;
+}
+
+
+ #suggestions {
+    text-align: center;
+    display: none;
+    margin: 0 auto;
+    list-style: none;
+    border-radius: 5px;
+    padding: 0;
+    overflow-y: hidden;
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+    max-height: 20vh;
+    font-weight: bold;
+    border: 3px solid black;
+    width: 60vw;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#suggestions li {
+    padding: 10px;
+    cursor: pointer;
+    display: inline block;
+    margin: 0 auto;
+}
+
+#suggestions li:hover {
+    background-color: #eee;
+}
+
+.bottom-line {
+    margin-top: 5%;
+    width: 50vw;
+    border: black;
+    height: 3px;
+    background-color: #000;
+}
+
+#footer-id {
+    font-weight: bold;
+    font-size: 0.7rem;
+}
