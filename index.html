@@ -22,7 +22,40 @@
     <!-- header -->
     <header class="header-class">
         <h1 class="chakra-petch-bold" id="title-id">SUNS POELTL</h1>
-        <button class="help-button">?</button>
+        <button class="help-button" onclick="togglePopup()">?</button>
+        <div class="popup" id="help-popup">
+            <div class="overlay">
+                <div class="content">
+                    <div class="instructions">
+                        <div class="close-button-div">
+                            <h3>HOW TO PLAY:</h3>
+                            <button class="close-button" onclick="togglePopup()">&times;</button>
+                        </div>
+                        <div class="instructions-section-div">
+                            <p>Try and guess which Suns player is in the silhouette.</p>
+                            <span>
+                                <div class="ins-box correct"></div>
+                                <p>A green clue is an exact match</p>
+                            </span>
+                            <span>
+                                <div class="ins-box close"></div>
+                                <p>A yellow clue is a close match (within 2 years, inches, or numbers).</p>
+                            </span>
+                            <span>
+                                <div class="ins-box incorect"></div>
+                                <p>A white clue is no match.</p>
+                            </span>
+                            <p><b>You have 5 guesses to name the Sun.</b></p>
+                            <p>(Roster Range: 2023-24)</p>
+                            <p>Good Luck!!</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </header>
 
     <!-- line + description text -->

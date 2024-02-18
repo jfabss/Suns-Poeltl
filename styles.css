@@ -38,7 +38,7 @@ body {
 
 #title-id {
     font-size: 3rem;
-    -webkit-text-stroke: 3px  #5f259f;
+    -webkit-text-stroke: 3px #5f259f;
     padding: 0;
     margin: 2%;
     font-style: italic;
@@ -64,6 +64,112 @@ body {
 .help-button:hover {
     transform: translate(0px, 4px);
     box-shadow: 0px 0px 0px 3px black, 0px 0px 0px 3px black, 0px 0px 0px 3px black, 0px 0px 0px 3px black, 0px 0px 0px 3px black;
+}
+
+/* pop up instructions section */
+.popup .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    display: none;
+    transition: all 300ms ease-in-out;
+}
+
+.popup .content {
+    transition: all 300ms ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #ffffff;
+    width: 85vw;
+    max-width: 600px;
+    height: 50vh;
+    max-height: 600px;
+    z-index: 3;
+    text-align: center;
+    transform: translate(-4px, 0px);
+    box-shadow: 0px 0px 0px 3px black, 1px 1px 0px 3px black, 2px 2px 0px 3px black, 3px 3px 0px 3px black, 4px 4px 0px 3px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px;
+    transition: all 300ms ease-in-out;
+}
+
+.close-button-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    background-color: #bec0c2;
+    padding: 5px;
+}
+
+.instructions-section-div {
+    padding: 10px;
+}
+
+.instructions span {
+    display: flex;
+    margin-bottom: 25px;
+    text-align: left;
+}
+.instructions p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.instructions h3 {
+    margin: 0;
+}
+
+.instructions span p{
+    margin: 0;
+    padding-left: 5px;
+}
+
+.ins-box {
+    width: 30px;
+    height: 30px;
+    transform: translate(-4px, 0px);
+    box-shadow: 0px 0px 0px 3px black, 1px 1px 0px 3px black, 2px 2px 0px 3px black, 3px 3px 0px 3px black, 4px 4px 0px 3px black;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.popup .close-button {
+    cursor: pointer;
+    padding: 0;
+    margin: 5px;
+    font-size: 1.5rem;
+    width: 30px;
+    height: 30px;
+    background-color: #5f259f;
+    color: #eee;
+    border: none;
+    transform: translate(-4px, 0px);
+    box-shadow: 0px 0px 0px 3px black, 1px 1px 0px 3px black, 2px 2px 0px 3px black, 3px 3px 0px 3px black, 4px 4px 0px 3px black;
+    transition: box-shadow .1s ease-in-out, transform .1s ease-in-out, margin .1s ease-in-out, height .25s ease-in-out, background-color .1s ease-in-out;
+}
+
+.close-button:hover {
+    transform: translate(0px, 4px);
+    box-shadow: 0px 0px 0px 3px black, 0px 0px 0px 3px black, 0px 0px 0px 3px black, 0px 0px 0px 3px black, 0px 0px 0px 3px black;
+}
+
+.popup.active .overlay {
+    transition: all 300ms ease-in-out;
+    display: block;
+}
+
+.popup.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 #title-line {
@@ -200,6 +306,7 @@ input[type="submit"]:hover {
     max-width: 700px;
     margin: auto;
 }
+
 .categories-container {
     margin: auto;
     margin-top: 15px;

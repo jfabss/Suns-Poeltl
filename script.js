@@ -269,3 +269,8 @@ function displaySuggestions(suggestions) {
 
     suggestionsList.style.display = 'block';
 }
+
+// popup function
+function togglePopup() {
+    document.getElementById("help-popup").classList.toggle('active');
+}
