@@ -124,6 +124,7 @@ input[type="text"] {
     transform: translate(-4px, 0px);
     box-shadow: 0px 0px 0px 3px black, 1px 1px 0px 3px black, 2px 2px 0px 3px black, 3px 3px 0px 3px black, 4px 4px 0px 3px black;
     transition: box-shadow .1s ease-in-out, transform .1s ease-in-out, margin .1s ease-in-out, height .25s ease-in-out, background-color .1s ease-in-out;
+    max-width: 700px;
 }
 
 input[type="text"]:hover {
@@ -151,6 +152,7 @@ input[type="text"]:hover {
     box-shadow: 0px 0px 0px 3px black, 1px 1px 0px 3px black, 2px 2px 0px 3px black, 3px 3px 0px 3px black, 4px 4px 0px 3px black;
     margin-top: 15px;
     transition: max-height 0.3s ease-in-out;
+    max-width: 700px;
 }
 
 #suggestions li {
@@ -165,7 +167,7 @@ input[type="text"]:hover {
 }
 
 input[type="submit"] {
-    background-color: #E56020;
+    background-color: #5f259f;
     height: 5vh;
     border: none;
     cursor: pointer;
@@ -180,6 +182,8 @@ input[type="submit"] {
     font-size: 2rem;
     border-radius: 0;
     outline: none;
+    max-width: 300px;
+    color: #ffffff;
 }
 
 input[type="submit"]:hover {
@@ -188,10 +192,14 @@ input[type="submit"]:hover {
 }
 
 #submitBtn:disabled {
-    color: #000;
+    color: white
 }
 
 /* categories section */
+.guess-container {
+    max-width: 700px;
+    margin: auto;
+}
 .categories-container {
     margin: auto;
     margin-top: 15px;
@@ -247,6 +255,10 @@ input[type="submit"]:hover {
     background-color: rgb(255, 255, 151);
 }
 
+.loss {
+    background-color: rgb(255, 151, 151);
+}
+
 .unveil {
     filter: none;
 }
@@ -259,7 +271,7 @@ input[type="submit"]:hover {
 
 /* footer section */
 .bottom-line {
-    margin-top: 5%;
+    margin-top: 25px;
     width: 50vw;
     border: black;
     height: 3px;
