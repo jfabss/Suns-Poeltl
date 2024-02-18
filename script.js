@@ -1,9 +1,10 @@
 
-// variables
+// global variables
 const nameInput = document.getElementById('nameInput');
 const submitBtn = document.getElementById('submitBtn');
 const guessContainer = document.getElementById('guess-container')
 const playerImage = document.getElementById('player-image');
+const messageText = document.getElementById('instruction-id')
 var divCounter = 1;
 
 // list of suns players
@@ -48,24 +49,18 @@ nameInput.addEventListener('keydown', function (event) {
     }
 });
 
-nameInput.addEventListener('focus', function (event) {
-    event.preventDefault();
-    // You can also add additional logic here if needed
-});
-
 // event listener for when user presses submit
 submitBtn.addEventListener('click', function () {
 
-    // if that runs while user has attempts
+    // if statement that runs while user has attempts
     if (attempts > 0) {
 
-        //variables
+        // variables
         const guessedName = nameInput.value.trim().toLowerCase().replace(/'/g, '');;
         const index = players.findIndex(player => player.name.trim().toLowerCase().replace(/'/g, '') === guessedName);
         const guessedPlayer = players[index];
         const messageText = document.getElementById('instruction-id')
         const validPlayer = players.find(player => player.name.toLowerCase().replace(/'/g, '') === guessedName);
-
 
         // if user enters nothing error handling
         if (guessedName === '') {
@@ -73,11 +68,13 @@ submitBtn.addEventListener('click', function () {
             return;
         }
 
+        // if user guesses a valid player
         if (validPlayer) {
 
             // if statement for correct answer
             if (guessedName === (correctGuess.name).toLowerCase().replace(/'/g, '')) {
 
+                // changes to HTML / styles
                 playerImage.classList.add('unveil')
                 messageText.innerHTML = 'BANGGG!!!!'
                 submitBtn.value = correctGuess.name;
@@ -85,23 +82,27 @@ submitBtn.addEventListener('click', function () {
                 submitBtn.style.marginTop = '0';
                 nameInput.style.display = 'none';
 
+                // creating the correct guess clues container
                 const newGuessDiv = document.createElement('div');
                 newGuessDiv.classList.add('categories-container', 'correct', 'unveil');
                 newGuessDiv.innerHTML = `<div class='category' id='college'>${correctGuess.college}</div> <div class='category' id='draft-year'>${correctGuess.drafted}</div> <div class='category' id='height'>${correctGuess.height}</div> <div class='category' id='number'>${correctGuess.number}</div> <div class='category' id='position'>${correctGuess.position}</div> </p>`;
                 guessContainer.appendChild(newGuessDiv);
+            }
 
-                // else statement for incorrect answer
-            } else {
+            // else statement for incorrect answer
+            else {
 
-
+                // subtracting 1 from attempts + HTML / styles changes
                 attempts--;
                 const newGuessDiv = document.createElement('div');
                 messageText.innerHTML = `Guesses left: ${attempts}...`;
+
+                // creating clues container for the guess
                 newGuessDiv.classList.add('categories-container', 'incorrect');
                 newGuessDiv.innerHTML = `<div class='category' id='college${divCounter}'>${guessedPlayer.college}</div> <div class='category' id='draft-year${divCounter}'>${guessedPlayer.drafted}</div> <div class='category' id='height${divCounter}'>${guessedPlayer.height}</div> <div class='category' id='number${divCounter}'>${guessedPlayer.number}</div> <div class='category' id='position${divCounter}'>${guessedPlayer.position}</div> </p>`;
                 guessContainer.appendChild(newGuessDiv);
 
-                // creating height variables 
+                // creating height + position variables for comparison 
                 const [guessedFeet, guessedInches] = guessedPlayer.height.split("'");
                 const [correctFeet, correctInches] = correctGuess.height.split("'");
                 const guessedFeetInt = parseInt(guessedFeet, 10) || 0;
@@ -110,17 +111,19 @@ submitBtn.addEventListener('click', function () {
                 const correctInchesInt = parseInt(correctInches, 10) || 0;
                 const guessedTotalHeightInInches = guessedFeetInt * 12 + guessedInchesInt;
                 const correctTotalHeightInInches = correctFeetInt * 12 + correctInchesInt;
-
-                // creating position variables
                 const positionWeights = {
                     "G": 1,
-                    "G-F": 2,
-                    "F-G": 3,
-                    "F": 4,
-                    "F-C": 5,
-                    "C-F": 6,
-                    "C": 7
-                }
+                    "G-F": 12,
+                    "F-G": 21,
+                    "F": 2,
+                    "F-C": 23,
+                    "C-F": 32,
+                    "C": 3
+                };
+                const guessedPlayerPositionNumber = positionWeights[guessedPlayer.position];
+                const correctPlayerPositionNumber = positionWeights[correctGuess.position];
+                const guessedPlayerPositionString = guessedPlayerPositionNumber.toString();
+                const correctPlayerPositionString = correctPlayerPositionNumber.toString();
 
                 // the hints if statements...
                 // COLLEGE IF STATEMENT
@@ -135,7 +138,7 @@ submitBtn.addEventListener('click', function () {
                     draftYear.classList.add('correct');
                 }
 
-                if (Math.abs(correctGuess.drafted - guessedPlayer.drafted) <= 3 && correctGuess.drafted !== guessedPlayer.drafted) {
+                if (Math.abs(correctGuess.drafted - guessedPlayer.drafted) <= 2 && correctGuess.drafted !== guessedPlayer.drafted) {
                     const draftYear = document.getElementById(`draft-year${divCounter}`);
                     draftYear.classList.add('close');
                 }
@@ -146,7 +149,7 @@ submitBtn.addEventListener('click', function () {
                     height.classList.add('correct');
                 }
 
-                if (Math.abs(correctTotalHeightInInches - guessedTotalHeightInInches) <= 3 && correctTotalHeightInInches !== guessedTotalHeightInInches) {
+                if (Math.abs(correctTotalHeightInInches - guessedTotalHeightInInches) <= 2 && correctTotalHeightInInches !== guessedTotalHeightInInches) {
                     const height = document.getElementById(`height${divCounter}`);
                     height.classList.add('close');
                 }
@@ -157,53 +160,66 @@ submitBtn.addEventListener('click', function () {
                     number.classList.add('correct');
                 }
 
-                if (Math.abs(correctGuess.number - guessedPlayer.number) <= 3 && correctGuess.number !== guessedPlayer.number) {
+                if (Math.abs(correctGuess.number - guessedPlayer.number) <= 2 && correctGuess.number !== guessedPlayer.number) {
                     const number = document.getElementById(`number${divCounter}`);
                     number.classList.add('close');
                 }
 
                 // POSITION IF STATEMENTS
+                let containsPosition = false;
+
+                for (let i = 0; i < correctPlayerPositionString.length; i++) {
+                    const digit = correctPlayerPositionString[i];
+
+                    if (guessedPlayerPositionString.includes(digit)) {
+                        containsPosition = true;
+                        break;
+                    }
+                }
+
                 if (guessedPlayer.position === correctGuess.position) {
                     const position = document.getElementById(`position${divCounter}`);
                     position.classList.add('correct');
                 }
 
-                if (Math.abs(positionWeights[correctGuess.position] - positionWeights[guessedPlayer.position]) === 1 && guessedPlayer.position !== correctGuess.position) {
+                if (containsPosition && guessedPlayer.position !== correctGuess.position) {
                     const position = document.getElementById(`position${divCounter}`);
                     position.classList.add('close');
                 }
 
+                // adding 1 to guess counter
                 divCounter++;
-
             }
         }
 
+        // alerting user if invalid player is entered
         else {
             alert('Player not found. Please try again.')
         }
-
     }
 
+    // if the user runs out of attempts
     if (attempts === 0) {
 
-        const messageText = document.getElementById('instruction-id')
-
+        // changes to HTML and styles
         messageText.innerHTML = `It was ${correctGuess.name}! Better luck next time!`;
         playerImage.classList.add('unveil')
         nameInput.disabled = true;
         submitBtn.disabled = true;
 
+        // adding the final clues div with incorrect styling
         const newGuessDiv = document.createElement('div');
         newGuessDiv.classList.add('categories-container', 'incorrect', 'unveil');
         newGuessDiv.innerHTML = `<div class='category' id='college'>${correctGuess.college}</div> <div class='category' id='draft-year'>${correctGuess.drafted}</div> <div class='category' id='height'>${correctGuess.height}</div> <div class='category' id='number'>${correctGuess.number}</div> <div class='category' id='position'>${correctGuess.position}</div> </p>`;
         guessContainer.appendChild(newGuessDiv);
-
     }
 
+    // reseting the name value after guess to null
     nameInput.value = '';
 
 });
 
+// logging correct answer
 console.log('Correct Guess:', correctGuess.name);
 
 // function for reset button
@@ -211,7 +227,10 @@ document.getElementById('resetBtn').addEventListener('click', function () {
     location.reload();
 });
 
+// suggestions list statements
 const suggestionsList = document.getElementById('suggestions');
+
+// event listener for when user types guess
 nameInput.addEventListener('input', function () {
     const inputText = nameInput.value.trim().toLowerCase();
     const matchingPlayers = players.filter(player => {
@@ -221,6 +240,7 @@ nameInput.addEventListener('input', function () {
     displaySuggestions(matchingPlayers);
 });
 
+// function for displaying suggestions
 function displaySuggestions(suggestions) {
     suggestionsList.innerHTML = '';
 
@@ -229,9 +249,10 @@ function displaySuggestions(suggestions) {
         return;
     }
 
+    // creating list item for each suggestion with match
     suggestions.forEach(suggestion => {
         const li = document.createElement('li');
-        li.textContent = suggestion.name;  // Assuming your player objects have a 'name' property
+        li.textContent = suggestion.name;
         li.addEventListener('click', () => {
             nameInput.value = suggestion.name;
             suggestionsList.style.display = 'none';
@@ -241,9 +262,3 @@ function displaySuggestions(suggestions) {
 
     suggestionsList.style.display = 'block';
 }
-
-document.addEventListener('click', function (event) {
-    if (!event.target.closest('.autocomplete')) {
-        suggestionsList.style.display = 'none';
-    }
-});
