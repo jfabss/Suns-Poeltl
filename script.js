@@ -119,6 +119,9 @@ submitBtn.addEventListener('click', function () {
                 newGuessDiv.classList.add('categories-container', 'correct', 'unveil');
                 newGuessDiv.innerHTML = `<div class='category' id='college'>${correctGuess.college}</div> <div class='category' id='draft-year'>${correctGuess.drafted}</div> <div class='category' id='height'>${correctGuess.height}</div> <div class='category' id='number'>${correctGuess.number}</div> <div class='category' id='position'>${correctGuess.position}</div> </p>`;
                 guessContainer.appendChild(newGuessDiv);
+
+                giveUpBtn.style.display = 'none';
+
             }
 
             // else statement for incorrect answer
