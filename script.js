@@ -280,7 +280,7 @@ nameInput.addEventListener('input', function () {
 function displaySuggestions(suggestions) {
     suggestionsList.innerHTML = '';
 
-    if (suggestions.length === 0) {
+    if (suggestions.length === 0 || nameInput.value ==="") {
         suggestionsList.style.display = 'none';
         return;
     }
@@ -302,4 +302,25 @@ function displaySuggestions(suggestions) {
 // popup function
 function togglePopup() {
     document.getElementById("help-popup").classList.toggle('active');
+}
+
+function giveUp() {
+
+            // changes to HTML and styles
+            messageText.innerHTML = `It was ${correctGuess.name}! Better luck next time!`;
+            playerImage.classList.add('unveil')
+            submitBtn.value = correctGuess.name;
+            submitBtn.disabled = true;
+            submitBtn.style.marginTop = '0';
+            nameInput.style.display = 'none';
+            nameInput.disabled = true;
+            submitBtn.disabled = true;
+            playerImageContainer.classList.add('loss')
+    
+            // adding the final clues div with incorrect styling
+            const newGuessDiv = document.createElement('div');
+            newGuessDiv.classList.add('categories-container', 'loss', 'unveil');
+            newGuessDiv.innerHTML = `<div class='category' id='college'>${correctGuess.college}</div> <div class='category' id='draft-year'>${correctGuess.drafted}</div> <div class='category' id='height'>${correctGuess.height}</div> <div class='category' id='number'>${correctGuess.number}</div> <div class='category' id='position'>${correctGuess.position}</div> </p>`;
+            guessContainer.appendChild(newGuessDiv);
+
 }

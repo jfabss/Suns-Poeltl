@@ -373,11 +373,20 @@ input[type="submit"]:hover {
 .unveil {
     filter: none;
 }
+.bottom-buttons {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
 
 /* reset button */
-#resetBtn {
+#resetBtn,#giveUpBtn {
     width: 30vw;
     font-size: 1rem;
+}
+
+#resetBtn {
+    margin-left: 20px;
 }
 
 /* footer section */
