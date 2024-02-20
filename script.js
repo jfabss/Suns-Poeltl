@@ -11,55 +11,71 @@ var divCounter = 1;
 
 // list of suns players
 const players = [
-    { name: 'Devin Booker', position: 'G', number: '1', drafted: '2015', height: "6'6", college: 'Kentucky', image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1626164.png" },
-    { name: 'Kevin Durant', position: 'F', number: '35', drafted: '2007', height: "6'11", college: 'Texas', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/201142.png' },
-    { name: 'Bradley Beal', position: 'G', number: '3', drafted: '2012', height: "6'4", college: 'Florida', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203078.png' },
-    { name: 'Grayson Allen', position: 'G', number: '8', drafted: '2018', height: "6'4", college: 'Duke', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628960.png' },
-    { name: 'Jusuf Nurkic', position: 'C', number: '20', drafted: '2014', height: "7'0", college: 'N/A', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203994.png' },
-    { name: "Royce O'Neale", position: 'F', number: '00', drafted: '2017', height: "6'4", college: 'Denver, Baylor', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1626220.png' },
-    { name: 'David Roddy', position: 'F', number: '21', drafted: '2022', height: "6'4", college: 'Colorado State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1631223.png' },
-    { name: 'Josh Okogie', position: 'G', number: '2', drafted: '2018', height: "6'4", college: 'Georgia Tech', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629006.png' },
-    { name: 'Theo Maledon', position: 'G', number: '12', drafted: '2020', height: "6'4", college: 'N/A', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630177.png' },
-    { name: 'Damion Lee', position: 'G-F', number: '10', drafted: '2018', height: "6'5", college: 'Drexel, Louisville', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1627814.png' },
-    { name: 'Bol Bol', position: 'C-F', number: '11', drafted: '2019', height: "7'3", college: 'Oregon', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629626.png' },
-    { name: 'Drew Eubanks', position: 'F-C', number: '14', drafted: '2018', height: "6'9", college: 'Oregon State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629234.png' },
-    { name: 'Eric Gordon', position: 'G', number: '23', drafted: '2008', height: "6'3", college: 'Indiana', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/201569.png' },
-    { name: 'Nassir Little', position: 'F-G', number: '25', drafted: '2019', height: "6'5", college: 'UNC', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629642.png' },
-    { name: 'Udoka Azubuike', position: 'C-F', number: '27', drafted: '2020', height: "6'10", college: 'Kansas', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628962.png' },
-    { name: 'Saben Lee', position: 'G', number: '38', drafted: '2020', height: "6'2", college: 'Vanderbilt', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630240.png' },
-    { name: 'Keita Bates-Diop', position: 'F', number: '21', drafted: '2018', height: "6'8", college: 'Ohio State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628966.png' },
-    { name: 'Jordan Goodwin', position: 'G', number: '0', drafted: '2021', height: "6'3", college: 'Saint Louis', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630692.png' },
-    { name: 'Yuta Wantanabe', position: 'G-F', number: '18', drafted: '2018', height: "6'9", college: 'George Washington', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629139.png' },
-    { name: 'Chimezie Metu', position: 'C-F', number: '4', drafted: '2018', height: "6'10", college: 'Southern California', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629002.png' },
-    { name: 'Deandre Ayton', position: 'C', number: '22', drafted: '2018', height: "7'0", college: 'Arizona', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629028.png' },
-    { name: 'Darius Bazley', position: 'F', number: '55', drafted: '2019', height: "6'9", college: 'N/A', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629647.png' },
-    { name: 'Bismack Biyombo', position: 'C', number: '18', drafted: '2011', height: "6'8", college: 'N/A', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/202687.png' },
-    { name: 'Mikal Bridges', position: 'G-F', number: '25', drafted: '2018', height: "6'6", college: 'Villanova', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628969.png' },
-    { name: 'Torrey Craig', position: 'F', number: '0', drafted: '2017', height: "6'7", college: 'USC Upstate', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628470.png' },
-    { name: 'Cameron Johnson', position: 'F', number: '23', drafted: '2019', height: "6'8", college: 'North Carolina', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629661.png' },
-    { name: 'Jock Landale', position: 'C', number: '11', drafted: '2021', height: "6'11", college: "St. Mary's", image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629111.png' },
-    { name: 'Chris Paul', position: 'G', number: '3', drafted: '2005', height: "6'0", college: 'Wake Forest', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/101108.png' },
-    { name: 'Cameron Payne', position: 'G', number: '15', drafted: '2015', height: "6'3", college: 'Murray State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1626166.png' },
-    { name: 'Terrence Ross', position: 'G-F', number: '8', drafted: '2012', height: "6'6", college: 'Washington', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203082.png' },
-    { name: 'Dario Saric', position: 'F-C', number: '20', drafted: '2016', height: "6'10", college: 'N/A', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203967.png' },
-    { name: 'Landry Shamet', position: 'G', number: '14', drafted: '2018', height: "6'4", college: 'Wichita State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629013.png' },
-    { name: 'Ish Wainright', position: 'F', number: '12', drafted: '2021', height: "6'6", college: 'Baylor', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630688.png' },
-    { name: 'T.J. Warren', position: 'F', number: '12, 21', drafted: '2014', height: "6'8", college: 'NC State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203933.png' },
-    { name: 'Duane Washington Jr.', position: 'G', number: '4', drafted: '2021', height: "6'3", college: 'Ohio State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630613.png' },
-    { name: 'M.J. Walker', position: 'G', number: '21', drafted: '2021', height: "6'5", college: 'Florida State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630640.png' },
-    { name: 'Paris Bass', position: 'F', number: '30', drafted: '2022', height: "6'8", college: 'Detroit Mercy', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/fallback.png' },
-    { name: 'Jae Crowder', position: 'F', number: '99', drafted: '2012', height: "6'6", college: 'Marquette', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203109.png' },
-    { name: 'Aaron Holiday', position: 'G', number: '4', drafted: '2018', height: "6'0", college: 'UCLA', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628988.png' },
-    { name: 'Chandler Hutchison', position: 'F', number: '35', drafted: '2018', height: "6'6", college: 'Boise State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628990.png' },
-    { name: 'Justin Jackson', position: 'F', number: '45', drafted: '2017', height: "6'8", college: 'UNC', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628382.png' },
-    { name: 'Frank Kaminsky', position: 'F-C', number: '8', drafted: '2015', height: "7'0", college: 'Wisconsin', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1626163.png' },
-    { name: 'Gabriel Lundberg', position: 'F', number: '19', drafted: '2022', height: "6'4", college: 'N/A', image: 'https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4981257.png' },
-    { name: 'Javale McGee', position: 'C', number: '00', drafted: '2008', height: "7'0", college: 'Nevada', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/201580.png' },
-    { name: 'Abdel Nader', position: 'F', number: '11', drafted: '2017', height: "6'5", college: 'Iowa State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1627846.png' },
-    { name: 'Elfrid Payton', position: 'G', number: '2', drafted: '2014', height: "6'3", college: 'Louisiana', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203901.png' },
-    { name: 'Jalen Smith', position: 'F-C', number: '10', drafted: '2020', height: "6'10", college: 'Maryland', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630188.png' },
-    { name: 'Emanuel Terry', position: 'F', number: '10, 26', drafted: '2019', height: "6'9", college: 'Lincoln Memorial', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629150.png' },
-    // { name: '', position: '', number: '', drafted: '', height: "", college: '', image: '' },
+    { name: 'Devin Booker', position: 'G', number: '1', debut: '2015', height: "6'6", college: 'Kentucky', image: "https://cdn.nba.com/headshots/nba/latest/1040x760/1626164.png" },
+    { name: 'Kevin Durant', position: 'F', number: '35', debut: '2007', height: "6'11", college: 'Texas', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/201142.png' },
+    { name: 'Bradley Beal', position: 'G', number: '3', debut: '2012', height: "6'4", college: 'Florida', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203078.png' },
+    { name: 'Grayson Allen', position: 'G', number: '8', debut: '2018', height: "6'4", college: 'Duke', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628960.png' },
+    { name: 'Jusuf Nurkic', position: 'C', number: '20', debut: '2014', height: "7'0", college: 'N/A', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203994.png' },
+    { name: "Royce O'Neale", position: 'F', number: '00', debut: '2017', height: "6'4", college: 'Denver, Baylor', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1626220.png' },
+    { name: 'David Roddy', position: 'F', number: '21', debut: '2022', height: "6'4", college: 'Colorado State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1631223.png' },
+    { name: 'Josh Okogie', position: 'G', number: '2', debut: '2018', height: "6'4", college: 'Georgia Tech', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629006.png' },
+    { name: 'Theo Maledon', position: 'G', number: '12', debut: '2020', height: "6'4", college: 'N/A', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630177.png' },
+    { name: 'Damion Lee', position: 'G-F', number: '10', debut: '2018', height: "6'5", college: 'Drexel, Louisville', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1627814.png' },
+    { name: 'Bol Bol', position: 'C-F', number: '11', debut: '2019', height: "7'3", college: 'Oregon', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629626.png' },
+    { name: 'Drew Eubanks', position: 'F-C', number: '14', debut: '2018', height: "6'9", college: 'Oregon State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629234.png' },
+    { name: 'Eric Gordon', position: 'G', number: '23', debut: '2008', height: "6'3", college: 'Indiana', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/201569.png' },
+    { name: 'Nassir Little', position: 'F-G', number: '25', debut: '2019', height: "6'5", college: 'UNC', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629642.png' },
+    { name: 'Udoka Azubuike', position: 'C-F', number: '27', debut: '2020', height: "6'10", college: 'Kansas', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628962.png' },
+    { name: 'Saben Lee', position: 'G', number: '38', debut: '2020', height: "6'2", college: 'Vanderbilt', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630240.png' },
+    { name: 'Keita Bates-Diop', position: 'F', number: '21', debut: '2018', height: "6'8", college: 'Ohio State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628966.png' },
+    { name: 'Jordan Goodwin', position: 'G', number: '0', debut: '2021', height: "6'3", college: 'Saint Louis', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630692.png' },
+    { name: 'Yuta Wantanabe', position: 'G-F', number: '18', debut: '2018', height: "6'9", college: 'George Washington', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629139.png' },
+    { name: 'Chimezie Metu', position: 'C-F', number: '4', debut: '2018', height: "6'10", college: 'Southern California', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629002.png' },
+    { name: 'Deandre Ayton', position: 'C', number: '22', debut: '2018', height: "7'0", college: 'Arizona', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629028.png' },
+    { name: 'Darius Bazley', position: 'F', number: '55', debut: '2019', height: "6'9", college: 'N/A', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629647.png' },
+    { name: 'Bismack Biyombo', position: 'C', number: '18', debut: '2011', height: "6'8", college: 'N/A', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/202687.png' },
+    { name: 'Mikal Bridges', position: 'G-F', number: '25', debut: '2018', height: "6'6", college: 'Villanova', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628969.png' },
+    { name: 'Torrey Craig', position: 'F', number: '0', debut: '2017', height: "6'7", college: 'USC Upstate', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628470.png' },
+    { name: 'Cameron Johnson', position: 'F', number: '23', debut: '2019', height: "6'8", college: 'North Carolina', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629661.png' },
+    { name: 'Jock Landale', position: 'C', number: '11', debut: '2021', height: "6'11", college: "St. Mary's", image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629111.png' },
+    { name: 'Chris Paul', position: 'G', number: '3', debut: '2005', height: "6'0", college: 'Wake Forest', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/101108.png' },
+    { name: 'Cameron Payne', position: 'G', number: '15', debut: '2015', height: "6'3", college: 'Murray State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1626166.png' },
+    { name: 'Terrence Ross', position: 'G-F', number: '8', debut: '2012', height: "6'6", college: 'Washington', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203082.png' },
+    { name: 'Dario Saric', position: 'F-C', number: '20', debut: '2016', height: "6'10", college: 'N/A', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203967.png' },
+    { name: 'Landry Shamet', position: 'G', number: '14', debut: '2018', height: "6'4", college: 'Wichita State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629013.png' },
+    { name: 'Ish Wainright', position: 'F', number: '12', debut: '2021', height: "6'6", college: 'Baylor', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630688.png' },
+    { name: 'T.J. Warren', position: 'F', number: '12, 21', debut: '2014', height: "6'8", college: 'NC State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203933.png' },
+    { name: 'Duane Washington Jr.', position: 'G', number: '4', debut: '2021', height: "6'3", college: 'Ohio State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630613.png' },
+    { name: 'M.J. Walker', position: 'G', number: '21', debut: '2021', height: "6'5", college: 'Florida State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630640.png' },
+    { name: 'Paris Bass', position: 'F', number: '30', debut: '2022', height: "6'8", college: 'Detroit Mercy', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/fallback.png' },
+    { name: 'Jae Crowder', position: 'F', number: '99', debut: '2012', height: "6'6", college: 'Marquette', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203109.png' },
+    { name: 'Aaron Holiday', position: 'G', number: '4', debut: '2018', height: "6'0", college: 'UCLA', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628988.png' },
+    { name: 'Chandler Hutchison', position: 'F', number: '35', debut: '2018', height: "6'6", college: 'Boise State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628990.png' },
+    { name: 'Justin Jackson', position: 'F', number: '45', debut: '2017', height: "6'8", college: 'UNC', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628382.png' },
+    { name: 'Frank Kaminsky', position: 'F-C', number: '8', debut: '2015', height: "7'0", college: 'Wisconsin', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1626163.png' },
+    { name: 'Gabriel Lundberg', position: 'F', number: '19', debut: '2022', height: "6'4", college: 'N/A', image: 'https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4981257.png' },
+    { name: 'Javale McGee', position: 'C', number: '00', debut: '2008', height: "7'0", college: 'Nevada', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/201580.png' },
+    { name: 'Abdel Nader', position: 'F', number: '11', debut: '2017', height: "6'5", college: 'Iowa State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1627846.png' },
+    { name: 'Elfrid Payton', position: 'G', number: '2', debut: '2014', height: "6'3", college: 'Louisiana', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203901.png' },
+    { name: 'Jalen Smith', position: 'F-C', number: '10', debut: '2020', height: "6'10", college: 'Maryland', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630188.png' },
+    { name: 'Emanuel Terry', position: 'F', number: '10, 26', debut: '2019', height: "6'9", college: 'Lincoln Memorial', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629150.png' },
+    { name: 'Ty-Shon Alexander', position: 'G', number: '0', debut: '2020', height: "6'3", college: 'Creighton', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1630234.png' },
+    { name: 'Jevon Carter', position: 'G', number: '4', debut: '2018', height: "6'1", college: 'West Virginia', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628975.png' },
+    { name: 'Langston Galloway', position: 'G', number: '2', debut: '2015', height: "6'1", college: "Saint Joseph's", image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/204038.png' },
+    { name: 'Damian Jones', position: 'C', number: '30', debut: '2016', height: "6'11", college: 'Vanderbilt', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1627745.png' },
+    { name: "E'Twaun Moore", position: 'G', number: '55', debut: '2011', height: "6'3", college: 'Purdue', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/202734.png' },
+    { name: 'Aron Baynes', position: 'C-F', number: '46', debut: '2013', height: "6'10", college: 'Washington State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/203382.png' },
+    { name: 'Jonah Bolden', position: 'C', number: '43', debut: '2018', height: "6'8", college: 'UCLA', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1628413.png' },
+    { name: 'Cheick Diallo', position: 'C-F', number: '14', debut: '2016', height: "6'8", college: 'Kansas', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1627767.png' },
+    { name: 'Jared Harper', position: 'G', number: '12', debut: '2019', height: "5'10", college: 'Auburn', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629607.png' },
+    { name: 'Ty Jerome', position: 'G-F', number: '10', debut: '2019', height: "6'5", college: 'Virginia', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629660.png' },
+    { name: 'Tyler Johnson', position: 'G', number: '16', debut: '2015', height: "6'3", college: 'Fresno State', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/204020.png' },
+    { name: 'Jalen Lecque', position: 'G', number: '0', debut: '2020', height: "6'4", college: 'N/A', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629665.png' },
+    { name: 'Elie Okobo', position: 'F-G', number: '2', debut: '2018', height: "6'3", college: 'N/A', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629059.png' },
+    { name: 'Kelly Oubre Jr.', position: 'F-G', number: '3', debut: '2015', height: "6'7", college: 'Kansas', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1626162.png' },
+    { name: 'Tariq Owens', position: 'F', number: '41', debut: '2020', height: "6'10", college: 'Tennessee, St. Johns, Texas Tech', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/1629745.png' },
+    { name: 'Ricky Rubio', position: 'G', number: '11', debut: '2011', height: "6'2", college: 'N/A', image: 'https://cdn.nba.com/headshots/nba/latest/1040x760/201937.png' },
+    // { name: '', position: '', number: '', debut: '', height: "", college: '', image: '' },
 ];
 
 // function to get a random player from the array
@@ -117,7 +133,7 @@ submitBtn.addEventListener('click', function () {
                 // creating the correct guess clues container
                 const newGuessDiv = document.createElement('div');
                 newGuessDiv.classList.add('categories-container', 'correct', 'unveil');
-                newGuessDiv.innerHTML = `<div class='category' id='college'>${correctGuess.college}</div> <div class='category' id='draft-year'>${correctGuess.drafted}</div> <div class='category' id='height'>${correctGuess.height}</div> <div class='category' id='number'>${correctGuess.number}</div> <div class='category' id='position'>${correctGuess.position}</div> </p>`;
+                newGuessDiv.innerHTML = `<div class='category' id='college'>${correctGuess.college}</div> <div class='category' id='draft-year'>${correctGuess.debut}</div> <div class='category' id='height'>${correctGuess.height}</div> <div class='category' id='number'>${correctGuess.number}</div> <div class='category' id='position'>${correctGuess.position}</div> </p>`;
                 guessContainer.appendChild(newGuessDiv);
 
                 giveUpBtn.style.display = 'none';
@@ -134,7 +150,7 @@ submitBtn.addEventListener('click', function () {
 
                 // creating clues container for the guess
                 newGuessDiv.classList.add('categories-container', 'incorrect');
-                newGuessDiv.innerHTML = `<div class='category' id='college${divCounter}'>${guessedPlayer.college}</div> <div class='category' id='draft-year${divCounter}'>${guessedPlayer.drafted}</div> <div class='category' id='height${divCounter}'>${guessedPlayer.height}</div> <div class='category' id='number${divCounter}'>${guessedPlayer.number}</div> <div class='category' id='position${divCounter}'>${guessedPlayer.position}</div> </p>`;
+                newGuessDiv.innerHTML = `<div class='category' id='college${divCounter}'>${guessedPlayer.college}</div> <div class='category' id='draft-year${divCounter}'>${guessedPlayer.debut}</div> <div class='category' id='height${divCounter}'>${guessedPlayer.height}</div> <div class='category' id='number${divCounter}'>${guessedPlayer.number}</div> <div class='category' id='position${divCounter}'>${guessedPlayer.position}</div> </p>`;
                 guessContainer.appendChild(newGuessDiv);
 
                 // creating height + position variables for comparison 
@@ -168,12 +184,12 @@ submitBtn.addEventListener('click', function () {
                 }
 
                 // DRAFT YEAR IF STATEMENTS
-                if (guessedPlayer.drafted === correctGuess.drafted) {
+                if (guessedPlayer.debut === correctGuess.debut) {
                     const draftYear = document.getElementById(`draft-year${divCounter}`);
                     draftYear.classList.add('correct');
                 }
 
-                if (Math.abs(correctGuess.drafted - guessedPlayer.drafted) <= 2 && correctGuess.drafted !== guessedPlayer.drafted) {
+                if (Math.abs(correctGuess.debut - guessedPlayer.debut) <= 2 && correctGuess.debut !== guessedPlayer.debut) {
                     const draftYear = document.getElementById(`draft-year${divCounter}`);
                     draftYear.classList.add('close');
                 }
@@ -250,7 +266,7 @@ submitBtn.addEventListener('click', function () {
         // adding the final clues div with incorrect styling
         const newGuessDiv = document.createElement('div');
         newGuessDiv.classList.add('categories-container', 'loss', 'unveil');
-        newGuessDiv.innerHTML = `<div class='category' id='college'>${correctGuess.college}</div> <div class='category' id='draft-year'>${correctGuess.drafted}</div> <div class='category' id='height'>${correctGuess.height}</div> <div class='category' id='number'>${correctGuess.number}</div> <div class='category' id='position'>${correctGuess.position}</div> </p>`;
+        newGuessDiv.innerHTML = `<div class='category' id='college'>${correctGuess.college}</div> <div class='category' id='draft-year'>${correctGuess.debut}</div> <div class='category' id='height'>${correctGuess.height}</div> <div class='category' id='number'>${correctGuess.number}</div> <div class='category' id='position'>${correctGuess.position}</div> </p>`;
         guessContainer.appendChild(newGuessDiv);
     }
 
@@ -324,7 +340,7 @@ function giveUp() {
     // adding the final clues div with incorrect styling
     const newGuessDiv = document.createElement('div');
     newGuessDiv.classList.add('categories-container', 'loss', 'unveil');
-    newGuessDiv.innerHTML = `<div class='category' id='college'>${correctGuess.college}</div> <div class='category' id='draft-year'>${correctGuess.drafted}</div> <div class='category' id='height'>${correctGuess.height}</div> <div class='category' id='number'>${correctGuess.number}</div> <div class='category' id='position'>${correctGuess.position}</div> </p>`;
+    newGuessDiv.innerHTML = `<div class='category' id='college'>${correctGuess.college}</div> <div class='category' id='draft-year'>${correctGuess.debut}</div> <div class='category' id='height'>${correctGuess.height}</div> <div class='category' id='number'>${correctGuess.number}</div> <div class='category' id='position'>${correctGuess.position}</div> </p>`;
     guessContainer.appendChild(newGuessDiv);
     giveUpBtn.style.display = 'none';
 
