@@ -263,6 +263,8 @@ submitBtn.addEventListener('click', function () {
         submitBtn.disabled = true;
         playerImageContainer.classList.add('loss')
 
+        giveUpBtn.style.display = 'none';
+
         // adding the final clues div with incorrect styling
         const newGuessDiv = document.createElement('div');
         newGuessDiv.classList.add('categories-container', 'loss', 'unveil');
@@ -345,3 +347,53 @@ function giveUp() {
     giveUpBtn.style.display = 'none';
 
 }
+
+// functions for tool tips under categories
+function toggleCollegeToolTip() {
+    var tooltipContainers = document.querySelectorAll('[class^="tooltip-container"]');
+    tooltipContainers.forEach(function (container) {
+        container.style.display = 'none';
+    });
+    document.getElementById("tool-tip-container-college").classList.toggle('visible');
+}
+
+function toggleDebutToolTip() {
+    var tooltipContainers = document.querySelectorAll('[class^="tooltip-container"]');
+    tooltipContainers.forEach(function (container) {
+        container.style.display = 'none';
+    });
+    document.getElementById("tool-tip-container-debut").classList.toggle('visible');
+}
+
+function toggleHeightToolTip() {
+    var tooltipContainers = document.querySelectorAll('[class^="tooltip-container"]');
+    tooltipContainers.forEach(function (container) {
+        container.style.display = 'none';
+    });
+    document.getElementById("tool-tip-container-height").classList.toggle('visible');
+}
+
+function toggleNumberToolTip() {
+    var tooltipContainers = document.querySelectorAll('[class^="tooltip-container"]');
+    tooltipContainers.forEach(function (container) {
+        container.style.display = 'none';
+    });
+    document.getElementById("tool-tip-container-number").classList.toggle('visible');
+}
+
+function togglePositionToolTip() {
+    var tooltipContainers = document.querySelectorAll('[class^="tooltip-container"]');
+    tooltipContainers.forEach(function (container) {
+        container.style.display = 'none';
+    });
+    document.getElementById("tool-tip-container-position").classList.toggle('visible');
+}
+
+// function for iPhone that gets rid of tip after tap
+document.body.addEventListener('click', function(event) {
+    var target = event.target;
+    var tooltipContainers = document.querySelectorAll('[class^="tooltip-container"]');
+    if (!tooltipContainers.contains(event.target)) {
+        tooltipContainers.classList.remove('visible');
+      }
+    });

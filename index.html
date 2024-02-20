@@ -78,11 +78,38 @@
     <!-- guess section -->
     <div class="guess-container" id="guess-container">
         <div class="categories-container">
-            <div class="category" id="college">Col.</div>
-            <div class="category" id="draft-year">Debut</div>
-            <div class="category" id="height">H.</div>
-            <div class="category" id="number">#</div>
-            <div class="category" id="position">Pos.</div>
+            <div class="category" id="college" onmouseover="toggleCollegeToolTip()" onmouseout="toggleCollegeToolTip()">
+                Col.</div>
+            <div class="category" id="draft-year" onmouseover="toggleDebutToolTip()" onmouseout="toggleDebutToolTip()">
+                Debut</div>
+            <div class="category" id="height" onmouseover="toggleHeightToolTip()" onmouseout="toggleHeightToolTip()">H.
+            </div>
+            <div class="category" id="number" onmouseover="toggleNumberToolTip()" onmouseout="toggleNumberToolTip()">#
+            </div>
+            <div class="category" id="position" onmouseover="togglePositionToolTip()"
+                onmouseout="togglePositionToolTip()">Pos.</div>
+        </div>
+
+        <div id="tool-tip-container-college">
+            <b>College:</b> The name of the college attended ("N/A": international / did not attend college). Green -
+            exact
+            match.
+        </div>
+        <div id="tool-tip-container-debut">
+            <b>Debut:</b> NBA Debut - The year in which this player played their first NBA game.
+            Yellow indicates that the year is within 2 years of exact match.
+        </div>
+        <div id="tool-tip-container-height">
+            <b>Height:</b> The players height in (feet' inches). Yellow indicates the height is within 2 inches of exact
+            match.
+        </div>
+        <div id="tool-tip-container-number">
+            <b>Number:</b> The players Jersey Number when playing for the Suns. Yellow indicates the number is within 2
+            digits of exact match.
+        </div>
+        <div id="tool-tip-container-position">
+            <b>Position:</b> The players position as listed on NBA.com. Yellow indicates the players position is similar
+            to that of the guess.
         </div>
     </div>
 
