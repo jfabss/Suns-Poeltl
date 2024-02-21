@@ -95,7 +95,7 @@ function pageReload() {
 // setting the correct guess, player image, and attempts on page load
 let correctGuess = getRandomPlayer();
 playerImage.src = correctGuess.image;
-let attempts = 5;
+let attempts = 7;
 
 // function for reset button
 document.getElementById('resetBtn').addEventListener('click', function () {
@@ -105,7 +105,7 @@ document.getElementById('resetBtn').addEventListener('click', function () {
     console.clear();
     console.log('Correct Guess: ', correctGuess.name)
 
-    attempts = 5;
+    attempts = 7;
 });
 
 // event listener that submits guess when user presses "Enter" key
@@ -363,7 +363,7 @@ function giveUp() {
     // adding the final clues div with incorrect styling
     const newGuessDiv = document.createElement('div');
     newGuessDiv.classList.add('categories-container', 'loss', 'unveil');
-    newGuessDiv.innerHTML = `<div class='category' id='college'>${correctGuess.college}</div> <div class='category' id='draft-year'>${correctGuess.debut}</div> <div class='category' id='height'>${correctGuess.height}</div> <div class='category' id='number'>${correctGuess.number}</div> <div class='category' id='position'>${correctGuess.position}</div> </p>`;
+    newGuessDiv.innerHTML = `<div class='category' id='college'>${correctGuess.draftedBy}</div> <div class='category' id='draft-year'>${correctGuess.debut}</div> <div class='category' id='height'>${correctGuess.height}</div> <div class='category' id='number'>${correctGuess.number}</div> <div class='category' id='position'>${correctGuess.position}</div> </p>`;
     guessContainer.appendChild(newGuessDiv);
     giveUpBtn.style.display = 'none';
 
