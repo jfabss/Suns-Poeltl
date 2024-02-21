@@ -404,9 +404,6 @@ input[type="submit"]:hover {
     filter: none;
 }
 
-.visible {
-    display: block;
-}
 
 .bottom-buttons {
     display: flex;
@@ -416,13 +413,18 @@ input[type="submit"]:hover {
 
 /* reset button */
 #resetBtn,
-#giveUpBtn {
+#giveUpBtn,
+#resetBtnReload {
     width: 30vw;
     font-size: 1rem;
 }
 
 #resetBtn {
     margin-left: 20px;
+}
+
+#resetBtnReload {
+    display: none;
 }
 
 /* footer section */
@@ -437,4 +439,8 @@ input[type="submit"]:hover {
 #footer-id {
     font-weight: bold;
     font-size: 0.7rem;
+}
+
+.visible {
+    display: block;
 }
